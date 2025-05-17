@@ -4,10 +4,11 @@ import { notFound } from 'next/navigation';
 
 export const revalidate = 300;
 
-export default function Page({ params }: { params: { slug: string } }) {
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   let data;
   try {
-    data = getPost(params.slug);
+    data = getPost(slug);
   } catch {
     notFound();
   }
