@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 
 export default function PostsList({ initialPosts, totalCount }) {
   const [posts, setPosts] = useState(initialPosts);
@@ -31,7 +32,9 @@ export default function PostsList({ initialPosts, totalCount }) {
     <div>
       <ul>
         {posts.map(post => (
-          <li key={post.slug}>{post.title}</li>
+          <li key={post.slug}>
+            <Link href={`/article/${post.slug}`}>{post.title}</Link>
+          </li>
         ))}
       </ul>
       <div data-testid="sentinel" ref={sentinelRef} />
