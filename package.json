@@ -26,5 +26,9 @@
     "prettier": "3.2.5",
     "husky": "9.0.11",
     "lint-staged": "15.2.0"
-  }
+  },
+    "imports": {
+    "@next/mdx": "./packages/@next/mdx/index.js",
+    "next-mdx-remote": "./packages/next-mdx-remote/index.js"
+  },
 }
