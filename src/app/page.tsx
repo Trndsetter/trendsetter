@@ -1,3 +1,14 @@
+import PostsList from '../components/PostsList.js';
+import { getPostsPage, getAllPosts } from '../lib/posts.js';
+
 export default function Page() {
-  return <h1 className="text-2xl font-bold">Hello Next 15</h1>;
+  const initial = getPostsPage(0, 20);
+  const total = getAllPosts().length;
+  return (
+    <main>
+      <h1 className="text-2xl font-bold">Latest Posts</h1>
+      {/* @ts-expect-error Server Component */}
+      <PostsList initialPosts={initial} totalCount={total} />
+    </main>
+  );
 }
