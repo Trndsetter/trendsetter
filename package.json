@@ -2,7 +2,6 @@
   "name": "trendsetter",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "node scripts/dev.js",
     "build": "echo 'build placeholder'",
