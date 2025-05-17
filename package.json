@@ -30,5 +30,5 @@
     "imports": {
     "@next/mdx": "./packages/@next/mdx/index.js",
     "next-mdx-remote": "./packages/next-mdx-remote/index.js"
-  },
+  }
 }
