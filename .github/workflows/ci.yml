@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - run: pnpm install
+      - run: pnpm lint
+      - run: pnpm test
+      - run: pnpm build
+      - run: PORT=3000 pnpm start &
+      - run: |
+          for i in {1..5}; do
+            if curl -sSf http://localhost:3000 >/dev/null; then
+              echo "Server started" && break
+            fi
+            sleep 2
+          done
+      - run: kill $(lsof -t -i:3000)
