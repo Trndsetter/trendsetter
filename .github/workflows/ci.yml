@@ -19,6 +19,7 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install
       - run: pnpm install ./packages/@next/mdx ./packages/next-mdx-remote 
+      - run: pnpm add -D @types/react
       - run: pnpm lint
       - run: pnpm test
       - run: pnpm build
