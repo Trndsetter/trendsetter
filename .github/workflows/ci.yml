@@ -18,6 +18,7 @@ jobs:
           node-version: 20
           cache: 'pnpm'
       - run: pnpm install
+      - run: pnpm install ./packages/@next/mdx ./packages/next-mdx-remote 
       - run: pnpm lint
       - run: pnpm test
       - run: pnpm build
