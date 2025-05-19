@@ -7,7 +7,6 @@ export default function Page() {
   return (
     <main>
       <h1 className="text-2xl font-bold">Latest Posts</h1>
-      {/* @ts-expect-error Server Component */}
       <PostsList initialPosts={initial} totalCount={total} />
     </main>
   );

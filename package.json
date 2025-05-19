@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "echo 'build placeholder'",
-    "start": "node scripts/dev.js",
+    "build": "next build --no-lint",
+    "start": "next start -p $PORT",
     "test": "node --test",
     "lint": "echo \"lint placeholder\"",
     "prepare": "mkdir -p .husky"

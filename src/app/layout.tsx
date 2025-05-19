@@ -1,8 +1,8 @@
-import "../styles/globals.css";
+import './globals.css';
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
-      <body>{children}</body>
+      <body className="max-w-3xl mx-auto p-4">{children}</body>
     </html>
   );
 }
