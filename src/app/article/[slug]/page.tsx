@@ -16,7 +16,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   return (
     <article>
       <h1 className="text-2xl font-bold">{meta.title}</h1>
-      {/* @ts-expect-error Server Component */}
       <Mdx html={html} />
     </article>
   );
